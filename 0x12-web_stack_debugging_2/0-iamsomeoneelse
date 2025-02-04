@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 <username>"
+  exit 1
+fi
+
+# Assign the first argument to a variable
+USERNAME=$1
+
+# Use 'su' to switch to the specified user and run the 'whoami' command
+su -s /bin/sh -c "whoami" "$USERNAME"
